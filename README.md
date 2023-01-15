@@ -33,10 +33,10 @@ The basic widgets are
 # StateMangement
     provider
     
-| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+| Mobile   |  Web | DeskTop | 
+| ------------- | ------------- | ------------- |
+| Content Cell  | Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  | Content Cell  |
 
 |        Mobile        |        Web        |        DeskTop        |
 |     --    |   --   |    --    |
