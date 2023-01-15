@@ -33,8 +33,7 @@ The basic widgets are
 # StateMangement
     provider
     
-    ![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
 
 
-https://drive.google.com/file/d/16lrSNE5UIAKKix2Jd69pRtW_C97RTnuw/view?usp=sharing
 
+![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
