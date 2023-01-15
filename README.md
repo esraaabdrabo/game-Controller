@@ -35,7 +35,8 @@ The basic widgets are
     
 | Mobile   |  Web | DeskTop | 
 | ------------- | ------------- | ------------- |
-| Content Cell  | Content Cell  | Content Cell  |
+| ![Screenshot_20230115_222609](https://user-images.githubusercontent.com/91227030/212568785-c2ddfc63-7cf9-4a9e-9ecb-12dbf1b98c64.jpg)  | ![Screenshot (131)](https://user-images.githubusercontent.com/91227030/212568973-50fdce33-59d9-44f5-8703-05ddefbf760e.png)
+|  | Content Cell  |
 | Content Cell  | Content Cell  | Content Cell  |
 
 |        Mobile        |        Web        |        DeskTop        |
