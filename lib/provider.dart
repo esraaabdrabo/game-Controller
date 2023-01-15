@@ -9,6 +9,7 @@ class PlayControllerVM extends ChangeNotifier {
   ];
   bool showMoves = false;
   String result = "";
+
   void changeShowMoves(bool value) {
     showMoves = value;
     notifyListeners();
