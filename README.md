@@ -5,6 +5,10 @@ Flutter project.
 
 To train on user interaction with the application.
 
+# Live
+
+https://game-controller.netlify.app/#/
+
 # Screen Record
 
 https://user-images.githubusercontent.com/91227030/212569738-5d18857c-d324-4482-a04f-3f4ba7cf5c36.mp4
