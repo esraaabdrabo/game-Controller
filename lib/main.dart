@@ -1,5 +1,6 @@
+import 'package:esraaabdrabo/animation/text.dart';
 import 'package:flutter/material.dart';
-import 'animation/animation.dart';
+import 'animation/size.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +16,13 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: AnimationExample() //const PlayController()
+        home: AnimateText(
+          begin: -1,
+          end: 1,
+          widget: const Text("ESRAA ABDRABO"),
+          duration: const Duration(seconds: 30),
+          isForward: true,
+        ) //const PlayController()
         );
   }
 }
