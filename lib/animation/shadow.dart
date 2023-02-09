@@ -1,5 +1,7 @@
 import 'package:esraaabdrabo/animation/offset.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:sizer/sizer.dart';
 
 class AnimateShadow extends StatefulWidget {
   Offset begin;
@@ -91,18 +93,20 @@ class _AnimateShadowExampleState extends State<AnimateShadowExample>
               height: 200,
               width: 200,
               decoration: BoxDecoration(shape: BoxShape.circle, boxShadow: [
-                BoxShadow(offset: shadowController.value, color: Colors.black),
+                BoxShadow(
+                    offset: shadowController.value, color: Colors.blueGrey),
                 const BoxShadow(color: Colors.white)
               ]),
               child: AnimateOffset(
                   begin: const Offset(0, 50),
                   end: Offset.zero,
-                  duration: const Duration(seconds: 35),
+                  duration: const Duration(milliseconds: 2500),
                   isForward: true,
-                  widget: const Text(
+                  widget: Text(
                     'E',
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 50),
+                    style: GoogleFonts.cairo(
+                        fontSize: 20.sp, color: Colors.blueGrey),
                   )),
             ));
   }

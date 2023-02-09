@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:sizer/sizer.dart';
 
 // ignore: must_be_immutable
 class AnimateObacity extends StatefulWidget {
@@ -60,10 +62,33 @@ class _AnimateObacityState extends State<AnimateObacity>
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: FadeTransition(opacity: _animationDouble, child: widget.widget),
-      ),
-    );
+    return FadeTransition(opacity: _animationDouble, child: widget.widget);
+  }
+}
+
+class AnimateObacityExample extends StatelessWidget {
+  const AnimateObacityExample({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimateObacity(
+        isRepeat: true,
+        begin: -1,
+        end: 1,
+        widget: Align(
+            alignment: Alignment.center,
+            child: Text(
+              'ESRAA Abdrabo',
+              style: GoogleFonts.cairo(
+                  fontSize: 25.sp,
+                  shadows: [
+                    const BoxShadow(
+                        offset: Offset(5, -5),
+                        blurRadius: 2,
+                        color: Color.fromARGB(40, 0, 0, 0))
+                  ],
+                  color: Colors.blueGrey),
+            )),
+        duration: const Duration(milliseconds: 2500));
   }
 }
