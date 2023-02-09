@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         home: Scaffold(
           backgroundColor: Colors.white,
           body: Center(
-            child: AnimateShadow(
+            child: AnimateShadowExample(
               begin: const Offset(-10, -10),
               end: const Offset(10, -10),
               duration: const Duration(milliseconds: 5000),
