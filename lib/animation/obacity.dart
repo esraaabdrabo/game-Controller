@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-class AnimateText extends StatefulWidget {
+// ignore: must_be_immutable
+class AnimateObacity extends StatefulWidget {
   double begin;
   double end;
   Duration duration;
@@ -9,7 +10,7 @@ class AnimateText extends StatefulWidget {
   bool isRepeat;
 
   Widget widget;
-  AnimateText(
+  AnimateObacity(
       {required this.begin,
       required this.end,
       required this.widget,
@@ -20,13 +21,14 @@ class AnimateText extends StatefulWidget {
       super.key});
 
   @override
-  State<AnimateText> createState() => _AnimateTextState();
+  State<AnimateObacity> createState() => _AnimateObacityState();
 }
 
-class _AnimateTextState extends State<AnimateText>
+class _AnimateObacityState extends State<AnimateObacity>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
-  late Animation<double> _animation;
+  late Animation<double> _animationDouble;
+
   getTikerFuture() {
     return widget.isForward
         ? _controller.forward()
@@ -42,8 +44,10 @@ class _AnimateTextState extends State<AnimateText>
     super.initState();
 
     _controller = AnimationController(duration: widget.duration, vsync: this);
-    _animation = Tween<double>(begin: widget.begin, end: widget.end).animate(
-        CurvedAnimation(parent: _controller, curve: Curves.bounceInOut));
+    _animationDouble = Tween<double>(begin: widget.begin, end: widget.end)
+        .animate(
+            CurvedAnimation(parent: _controller, curve: Curves.bounceInOut));
+
     getTikerFuture();
   }
 
@@ -58,10 +62,7 @@ class _AnimateTextState extends State<AnimateText>
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: FadeTransition(
-          opacity: _animation,
-          child: widget.widget,
-        ),
+        child: FadeTransition(opacity: _animationDouble, child: widget.widget),
       ),
     );
   }

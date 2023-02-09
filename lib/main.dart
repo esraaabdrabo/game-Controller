@@ -1,6 +1,6 @@
-import 'package:esraaabdrabo/animation/text.dart';
+import 'package:esraaabdrabo/animation/obacity.dart';
+import 'package:esraaabdrabo/animation/shadow.dart';
 import 'package:flutter/material.dart';
-import 'animation/size.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,13 +16,15 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: AnimateText(
-          begin: -1,
-          end: 1,
-          widget: const Text("ESRAA ABDRABO"),
-          duration: const Duration(seconds: 30),
-          isForward: true,
-        ) //const PlayController()
-        );
+        home: Scaffold(
+          backgroundColor: Colors.white,
+          body: Center(
+            child: AnimateShadow(
+              begin: const Offset(-10, -10),
+              end: const Offset(10, -10),
+              duration: const Duration(milliseconds: 5000),
+            ),
+          ),
+        ));
   }
 }
