@@ -10,11 +10,13 @@ class AnimateOffset extends StatefulWidget {
   bool isRepeat;
 
   Widget widget;
+  dynamic curve;
   AnimateOffset(
       {required this.begin,
       required this.end,
       required this.widget,
       required this.duration,
+      this.curve,
       this.isForward = false,
       this.isRepeat = false,
       this.isReverse = false,
@@ -44,7 +46,8 @@ class _AnimateOffsetState extends State<AnimateOffset>
 
     _controller = AnimationController(duration: widget.duration, vsync: this);
     _animationOffest = Tween<Offset>(begin: widget.begin, end: widget.end)
-        .animate(_controller);
+        .animate(CurvedAnimation(
+            parent: _controller, curve: widget.curve ?? Curves.bounceIn));
     getTikerFuture();
   }
 
@@ -52,7 +55,6 @@ class _AnimateOffsetState extends State<AnimateOffset>
   void dispose() {
     _controller.dispose();
     super.dispose();
-    _controller.forward();
   }
 
   @override
