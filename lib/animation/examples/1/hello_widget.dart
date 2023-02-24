@@ -16,16 +16,19 @@ class _HelloState extends State<Hello> {
   @override
   Widget build(BuildContext context) {
     hello() {
-      return InkWell(
-          child: Text(
-            "Hello Again , We Are More Than Happy To See You.",
-            textAlign: TextAlign.center,
-            style: GoogleFonts.cairo(fontSize: 10.sp, color: Colors.white),
-          ),
-          onTap: () {
-            start = true;
-            setState(() {});
-          });
+      return Padding(
+        padding: EdgeInsets.all(8.w),
+        child: InkWell(
+            child: Text(
+              "Hello Again , We Are More Than Happy To See You.",
+              textAlign: TextAlign.center,
+              style: GoogleFonts.cairo(fontSize: 18.sp, color: Colors.white),
+            ),
+            onTap: () {
+              start = true;
+              setState(() {});
+            }),
+      );
     }
 
     return start

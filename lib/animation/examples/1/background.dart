@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
-import '../../offset.dart';
-
 class Background extends StatelessWidget {
   const Background({super.key});
 
@@ -27,7 +25,7 @@ class Background extends StatelessWidget {
               offset: Offset(-1, 2),
               blurRadius: 2,
               color: Color.fromARGB(144, 255, 255, 255))
-        ], fontSize: 20.sp, color: Colors.white),
+        ], fontSize: 50.sp, color: Colors.white),
       ),
     );
   }

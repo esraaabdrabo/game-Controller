@@ -26,7 +26,7 @@ class _ClickMeBTNState extends State<ClickMeBTN> {
         },
         child: Text(
           "Click Me",
-          style: GoogleFonts.cairo(fontSize: 5.sp, color: Colors.cyan),
+          style: GoogleFonts.cairo(fontSize: 18.sp, color: Colors.cyan),
         ),
       );
     }

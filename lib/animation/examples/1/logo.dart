@@ -1,6 +1,5 @@
 import 'package:esraaabdrabo/animation/examples/1/fallingWidget.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
 class Logo extends StatefulWidget {
@@ -17,7 +16,7 @@ class _LogoState extends State<Logo> {
   Widget build(BuildContext context) {
     logo() {
       return InkWell(
-          child: FlutterLogo(size: 15.w),
+          child: FlutterLogo(size: 50.w),
           onTap: () {
             start = true;
             setState(() {});

@@ -3,30 +3,37 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
 // ignore: must_be_immutable
-class AnimateObacity extends StatefulWidget {
+class AnimateGradient extends StatefulWidget {
   double begin;
   double end;
+  double width;
+  double height;
   Duration duration;
   bool isForward;
   bool isReverse;
   bool isRepeat;
-
+  dynamic curve;
   Widget widget;
-  AnimateObacity(
+  List<Color> colors;
+  AnimateGradient(
       {required this.begin,
       required this.end,
+      required this.width,
+      required this.height,
+      required this.colors,
       required this.widget,
       required this.duration,
+      this.curve = Curves.bounceIn,
       this.isForward = false,
       this.isRepeat = false,
       this.isReverse = false,
       super.key});
 
   @override
-  State<AnimateObacity> createState() => _AnimateObacityState();
+  State<AnimateGradient> createState() => _AnimateGradientState();
 }
 
-class _AnimateObacityState extends State<AnimateObacity>
+class _AnimateGradientState extends State<AnimateGradient>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _animationDouble;
@@ -47,8 +54,7 @@ class _AnimateObacityState extends State<AnimateObacity>
 
     _controller = AnimationController(duration: widget.duration, vsync: this);
     _animationDouble = Tween<double>(begin: widget.begin, end: widget.end)
-        .animate(
-            CurvedAnimation(parent: _controller, curve: Curves.bounceInOut));
+        .animate(CurvedAnimation(parent: _controller, curve: widget.curve));
 
     getTikerFuture();
   }
@@ -61,33 +67,20 @@ class _AnimateObacityState extends State<AnimateObacity>
 
   @override
   Widget build(BuildContext context) {
-    return FadeTransition(opacity: _animationDouble, child: widget.widget);
-  }
-}
-
-class AnimateObacityExample extends StatelessWidget {
-  const AnimateObacityExample({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return AnimateObacity(
-        isRepeat: true,
-        begin: -1,
-        end: 1,
-        widget: Align(
-            alignment: Alignment.center,
-            child: Text(
-              'ESRAA Abdrabo',
-              style: GoogleFonts.cairo(
-                  fontSize: 25.sp,
-                  shadows: [
-                    const BoxShadow(
-                        offset: Offset(5, -5),
-                        blurRadius: 2,
-                        color: Color.fromARGB(40, 0, 0, 0))
-                  ],
-                  color: Colors.blueGrey),
-            )),
-        duration: const Duration(milliseconds: 2500));
+    return AnimatedBuilder(
+        animation: _controller,
+        builder: (context, child) => Container(
+              padding:
+                  EdgeInsets.symmetric(horizontal: 1.25.w, vertical: 1.5.h),
+              alignment: Alignment.center,
+              height: widget.height,
+              width: widget.width,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                    colors: widget.colors,
+                    transform: GradientRotation(_animationDouble.value)),
+              ),
+              child: widget.widget,
+            ));
   }
 }
